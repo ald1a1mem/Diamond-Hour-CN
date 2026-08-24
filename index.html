@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【繁中歌詞】Diamond Hour</title>
+
+<!-- 💡 修正：補上 id="custom-favicon" -->
+<link id="custom-favicon" rel="icon" type="image/png" href="https://github.com/ald1a1mem.png">
+
+<script>
+// =========================================================================
+// ✨【大平台設定區】以後換新影片，只需要修改這裡！ ✨
+// =========================================================================
+
+// 1. YouTube 影片 ID（請填入網址 watch?v= 後面那一串 11 位數英文數字）
+const videoId = "2tH07ET_gNA"; 
+
+// 2. 🐱 你的 GitHub 帳號名稱（User Name）
+const githubUsername = "ald1a1mem"; 
+
+// 3. 右側時間軸捷徑（顯示名稱、要跳轉的時間秒數）
+
+// 4. 影片字幕設定（如不需滾動字幕，保持空陣列 [] 即可）
+const subtitles = [
+  { time: 13, text: "LEO\n你帶給我最珍貴的寶藏" },
+  { time: 15, text: "LEO\n當我抵達夢想的彼岸" },
+  { time: 17, text: "LEO\nDiamond Hour" },
+  { time: 18, text: "LEO\n我沉醉在這閃耀時刻" },
+  { time: 24, text: "安信\nDiamond Hour" },
+  { time: 27, text: "ARNO\這就是我渴望的一切" },
+  { time: 29, text: "ARNO\這就是我真正需要的一切" },
+  { time: 31, text: "ARNO\這就是我所追尋的" },
+  { time: 32, text: "ARNO\Diamond Hour" },
+  { time: 34, text: "安信\此刻 我正身處屬於我們的 Diamond Hour" },
+  { time: 37, text: "安信\因為我們終將一同閃耀 Yeah yeah" },
+  { time: 42, text: "相沅\真奇妙" },
+  { time: 43, text: "相沅\每一天都是如此" },
+  { time: 46, text: "相沅\原來所謂的愛情" },
+  { time: 47, text: "相沅\就是這般浪漫" },
+  { time: 49, text: "ARNO\照著你所說的去做" },
+  { time: 51, text: "ARNO\我終於明白 那光芒是如何綻放" },
+  { time: 52, text: "俊抒\我還在慢慢讀懂這顆複雜的心" },
+  { time: 55, text: "相炫\徹夜未眠 只因那道光芒 讓我再也移不開目光" },
+  { time: 57, text: "相炫\你就像鑽石一般" },
+  { time: 59, text: "相炫\照亮了我整顆心" },
+  { time: 62, text: "鑫隆\無論何時都不曾改變" },
+  { time: 65, text: "鑫隆\請再次呼喚我的名字" },
+  { time: 66, text: "鑫隆\有你相伴" },
+  { time: 67, text: "鑫隆\映照著我的，是你的雙眼" },
+  { time: 69, text: "安信\你帶給我最珍貴的寶藏" },
+  { time: 71, text: "安信\當我抵達夢想的彼岸" },
+  { time: 73, text: "安信\Diamond Hour" },
+  { time: 74, text: "安信\我沉醉在這閃耀時刻" },
+  { time: 80, text: "俊抒\Diamond Hour" },
+  { time: 83, text: "鑫隆\這就是我渴望的一切" },
+  { time: 84, text: "鑫隆\這就是我真正需要的一切" },
+  { time: 87, text: "鑫隆\這就是我所追尋的" },
+  { time: 87, text: "鑫隆\Diamond Hour" },
+  { time: 89, text: "俊抒\此刻 我正身處屬於我們的 Diamond Hour" },
+  { time: 92, text: "俊抒\因為我們終將一同閃耀 Yeah yeah" },
+  { time: 97, text: "LEO\每一分" },
+  { time: 98, text: "LEO\每一秒" },
+  { time: 99, text: "LEO\每個瞬間都是你" },
+  { time: 101, text: "LEO\好想緊緊擁抱你" },
+  { time: 102, text: "LEO\讓你的存在填滿我的世界" },
+  { time: 106, text: "ARNO\我的全部都是你 Baby" },
+  { time: 107, text: "ARNO\你讓我徹底為你著迷" },
+  { time: 109, text: "ARNO\告訴我 你就是我的 Baby" },
+  { time: 111, text: "相沅\我喜歡你 真的好喜歡你" },
+  { time: 115, text: "相沅\在那份純粹透明之中 我終於看見最真實的你" },
+  { time: 120, text: "相炫\無論醒著還是睡著 腦海裡始終都只有你" },
+  { time: 123, text: "相炫\難道你還沒發現嗎" },
+  { time: 124, text: "相炫\是你填滿了我的每一刻" },
+  { time: 126, text: "安信\你 如此耀眼" },
+  { time: 130, text: "安信\你 始終縈繞在我心上" },
+  { time: 133, text: "安信\你 每一次都帶來新的悸動" },
+  { time: 137, text: "安信\讓我多認識真正的你" },
+  { time: 139, text: "俊抒\你帶給我最珍貴的寶藏" },
+  { time: 140, text: "俊抒\當我抵達夢想的彼岸" },
+  { time: 142, text: "俊抒\Diamond Hour" },
+  { time: 144, text: "俊抒\我沉醉在這閃耀時刻" }, 
+  { time: 149, text: "相沅\Diamond Hour" },
+  { time: 153, text: "LEO\這就是我渴望的一切" },
+  { time: 154, text: "LEO\這就是我真正需要的一切" },
+  { time: 156, text: "LEO\這就是我所追尋的" },
+  { time: 157, text: "LEO\Diamond Hour" },
+  { time: 159, text: "相沅\此刻 我正身處屬於我們的 Diamond Hour" },
+  { time: 162, endTime: 166, text: "相沅\因為我們終將一同閃耀 Yeah yeah" },
+];
+
+// =========================================================================
+</script>
+
+<style>
+/* 🎨 全域基礎樣式（深色背景） */
+body { 
+  background: #111; 
+  color: white; 
+  text-align: center; 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
+  margin: 0; 
+  overflow-x: hidden; 
+}
+
+/* 🌟 主題顏色設定（亮藍色風格） */
+:root { 
+  --main-color: #5698c3; 
+}
+
+/* 🔝 標題與字幕控制區 */
+#title { 
+  font-size: 28px; 
+  margin: 20px auto 15px auto; 
+  font-weight: bold; 
+  line-height: 1.5; 
+  max-width: 95%; 
+}
+
+#subtitle-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* 🎬 核心外層大框框：寬度限制為影片寬度，使其完美居中 */
+#main-layout {
+  position: relative;
+  max-width: 640px; 
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+#video-wrapper { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  width: 100%; 
+}
+
+/* 🎥 影片容器 */
+#video-container { 
+  position: relative; 
+  width: 100%; 
+  aspect-ratio: 16 / 9; 
+  background: black; 
+  border-radius: 10px; 
+  overflow: hidden; 
+}
+#player, #player iframe { 
+  width: 100%; 
+  height: 100%; 
+  display: block; 
+}
+
+/* 💬 浮動字幕樣式 */
+#subtitle { 
+  position: absolute; 
+  bottom: 12%; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  font-size: 24px; 
+  color: white; 
+  background: rgba(0,0,0,0.65); 
+  padding: 8px 20px; 
+  border-radius: 8px; 
+  white-space: pre-line; 
+  max-width: 70%; 
+  width: fit-content; 
+  pointer-events: none; 
+  z-index: 10; 
+  line-height: 1.4; 
+  display: none;
+  transition: font-size 0.2s ease;
+}
+
+/* 🎯 底部控制列（影片下方只留下全螢幕按鈕） */
+#bottom-block { 
+  width: 100%; 
+  margin-top: 20px; 
+  margin-bottom: 35px; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+}
+
+/* 按鈕通用樣式 */
+.btn {
+  background: var(--main-color); 
+  color: white; 
+  border: none; 
+  padding: 8px 22px; 
+  border-radius: 6px; 
+  cursor: pointer; 
+  font-weight: bold; 
+  transition: 0.3s; 
+  font-size: 15px;
+}
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+/* 主按鈕（全螢幕）加寬加厚 */
+#fullscreenBtn { 
+  padding: 10px 35px;
+  font-size: 16px;
+}
+
+/* 🚪 進入全螢幕後在畫面右下方顯示的「退出全螢幕」按鈕（主色調） */
+#exitFullscreenBtn {
+  display: none; 
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 20; 
+  background: var(--main-color); 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+#exitFullscreenBtn:hover {
+  filter: brightness(1.1);
+}
+/* 當偵測到全螢幕狀態時，自動強制顯示該按鈕 */
+#video-container:fullscreen #exitFullscreenBtn,
+#video-container:-webkit-full-screen #exitFullscreenBtn {
+  display: block !important;
+}
+
+/* 📜 右側獨立時間軸選單 */
+#timeline-sidebar {
+  position: absolute;
+  left: 680px;      
+  top: 0;
+  width: 280px;
+  height: 360px;    
+  background: #222;
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto; 
+  text-align: left;
+}
+
+/* 側欄標題區 */
+#sidebar-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--main-color); 
+  margin-bottom: 5px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 8px;
+}
+
+#timeline-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* 📜 美化側欄滾動條 */
+#timeline-sidebar::-webkit-scrollbar { width: 6px; }
+#timeline-sidebar::-webkit-scrollbar-track { background: #222; }
+#timeline-sidebar::-webkit-scrollbar-thumb { background: #444; border-radius: 3px; }
+#timeline-sidebar::-webkit-scrollbar-thumb:hover { background: var(--main-color); }
+
+/* 📱 RWD 行動裝置自動適應 */
+@media (max-width: 1024px) {
+  #main-layout { max-width: min(95vw, 640px); }
+  #timeline-sidebar {
+    position: static; 
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="title">【繁中歌詞】Diamond Hour</div>
+
+<div id="subtitle-controls">
+  <button class="btn" onclick="adjustSubtitle(4)">放大</button>
+  <button class="btn" onclick="adjustSubtitle(-4)">縮小</button>
+  <button class="btn" onclick="resetSubtitle()">復原</button>
+</div>
+
+<div id="main-layout">
+  
+  <div id="video-wrapper">
+    <div id="video-container">
+      <div id="player"></div>
+      <div id="subtitle"></div>
+      <button id="exitFullscreenBtn" class="btn" onclick="exitFullScreen()">退出全螢幕</button>
+    </div>
+    
+    <div id="bottom-block">
+      <button id="fullscreenBtn" class="btn" onclick="enterFullScreen()">全螢幕</button>
+    </div>
+  </div>
+
+  <div id="timeline-sidebar">
+    <div id="sidebar-title">時間軸目錄</div>
+    <div id="timeline-controls"></div>
+  </div>
+
+</div>
+
+<script>
+let player = null;
+const defaultFontSize = 24; 
+let currentFontSize = defaultFontSize;
+
+// 載入 YouTube API
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player("player", {
+    height: "360",
+    width: "640",
+    videoId: videoId,
+    playerVars: { 
+      'autoplay': 0, 
+      'controls': 1, 
+      'rel': 0, 
+      'modestbranding': 1, 
+      'origin': window.location.origin,
+      'fs': 0 
+    },
+    events: { 
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange // 👈 補上這一行
+    }
+  });
+}
+
+function onPlayerReady(event) { 
+  initTimelineButtons();
+  initGithubFavicon(); 
+  resetSubtitle();
+  // 💡 建議：調整為 40ms，字幕偵測更順暢
+  setInterval(videoLoop, 40); 
+}
+
+function videoLoop() {
+  if (!player || typeof player.getCurrentTime !== 'function') return;
+  const currentTime = player.getCurrentTime();
+  updateSubtitle(currentTime);
+}
+
+// 🌐 核心功能：動態綁定 GitHub 頭像至 Favicon
+function initGithubFavicon() {
+  if (!githubUsername || githubUsername === "填入你的GitHub帳號") return;
+  
+  const githubAvatarUrl = `https://github.com/${githubUsername}.png`;
+  const faviconEl = document.getElementById("custom-favicon");
+  if (faviconEl) {
+    faviconEl.href = githubAvatarUrl;
+  }
+}
+
+// 更新字幕
+function updateSubtitle(t){
+  if (!subtitles || subtitles.length === 0) return;
+  let text = "";
+  for(let i = subtitles.length - 1; i >= 0; i--){
+    const sub = subtitles[i];
+    if(t >= sub.time){
+      if(sub.endTime && t >= sub.endTime) { text = ""; } 
+      else { text = sub.text; }
+      break; 
+    }
+  }
+  const subEl = document.getElementById("subtitle");
+  if(text === "") { subEl.style.display = "none"; } 
+  else { subEl.style.display = "block"; subEl.innerText = text; }
+}
+
+// 點擊跳轉時間
+function jumpToTime(seconds) {
+  if (player && typeof player.seekTo === 'function') {
+    player.seekTo(seconds, true);
+    if (player.getPlayerState() !== 1) player.playVideo();
+  }
+}
+
+// 生成右側時間軸按鈕
+function initTimelineButtons() {
+  const container = document.getElementById("timeline-controls");
+  if (!container || !timeLinks || timeLinks.length === 0) return;
+  container.innerHTML = "";
+  timeLinks.forEach(link => {
+    const btn = document.createElement("button");
+    btn.innerText = link.label;
+    btn.style.cssText = "background: #333; color: white; border: 1px solid #444; padding: 12px 15px; border-radius: 6px; cursor: pointer; transition: 0.3s; font-weight: bold; font-size: 14px; width: 100%; text-align: left;";
+    btn.onmouseover = () => { btn.style.background = "var(--main-color)"; btn.style.borderColor = "var(--main-color)"; };
+    btn.onmouseout = () => { btn.style.background = "#333"; btn.style.borderColor = "#444"; };
+    btn.onclick = () => jumpToTime(link.seconds);
+    container.appendChild(btn);
+  });
+}
+
+// 字幕放大縮小功能
+function adjustSubtitle(value) {
+  const subEl = document.getElementById("subtitle");
+  currentFontSize += value;
+  if (currentFontSize < 12) currentFontSize = 12; 
+  if (currentFontSize > 60) currentFontSize = 60; 
+  subEl.style.fontSize = currentFontSize + "px";
+}
+
+// 字幕復原功能
+function resetSubtitle() {
+  const subEl = document.getElementById("subtitle");
+  currentFontSize = defaultFontSize;
+  subEl.style.fontSize = currentFontSize + "px";
+}
+
+// 進入全螢幕
+function enterFullScreen() {
+  const elem = document.getElementById("video-container");
+  let req = elem.requestFullscreen || elem.webkitRequestFullscreen;
+  if (req) req.call(elem);
+}
+
+// 離開全螢幕
+function exitFullScreen() {
+  let exit = document.exitFullscreen || document.webkitExitFullscreen;
+  if (exit) exit.call(document);
+}
+</script>
+</body>
+</html>
