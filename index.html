@@ -335,12 +335,10 @@ function onYouTubeIframeAPIReady() {
       'fs': 0 
     },
     events: { 
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange // 👈 補上這一行
+      'onReady': onPlayerReady 
     }
   });
 }
-
 function onPlayerReady(event) { 
   initTimelineButtons();
   initGithubFavicon(); 
@@ -354,7 +352,6 @@ function videoLoop() {
   const currentTime = player.getCurrentTime();
   updateSubtitle(currentTime);
 }
-
 // 🌐 核心功能：動態綁定 GitHub 頭像至 Favicon
 function initGithubFavicon() {
   if (!githubUsername || githubUsername === "填入你的GitHub帳號") return;
